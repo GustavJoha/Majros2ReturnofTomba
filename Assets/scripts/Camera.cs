@@ -28,5 +28,6 @@ public class Camera : MonoBehaviour
         transform.localRotation = Quaternion.Euler(xrotate, 0f, 0f);
 
         playerbody.Rotate(Vector3.up * mouseX);
+        //Gör så att kameran följer efter musen och spelaren , Victor
     }
 }
