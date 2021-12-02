@@ -224,7 +224,9 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
-  m_Layer: 0
+  - component: {fileID: 963194229}
+  - component: {fileID: 963194230}
+  m_Layer: 2
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -296,6 +298,32 @@ Transform:
   m_Father: {fileID: 1829832975}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &963194229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec51f310ca5f44947ac66d74271e2163, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MouseSensitivity: 100
+  playerbody: {fileID: 1829832975}
+--- !u!114 &963194230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e6bf2b0d2ea5ff4db403e8d578fcc52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1802498632
 GameObject:
   m_ObjectHideFlags: 0
@@ -403,7 +431,7 @@ GameObject:
   - component: {fileID: 1829832972}
   - component: {fileID: 1829832971}
   - component: {fileID: 1829832970}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
