@@ -10,10 +10,18 @@ public class Movement : MonoBehaviour
     public Rigidbody rb;
     public float speed = 4;
     public bool paused;
+    public bool GroundCheck;
+    private bool isGrounded;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+
+      
+
+       
+
     }
 
     // Update is called once per frame
@@ -26,5 +34,32 @@ public class Movement : MonoBehaviour
         move.y = rb.velocity.y; // ser till att spelaren faller ordentligt
 
         rb.velocity = move;
+
+
+     
+        {
+            RaycastHit hit;
+            float distance = 1.1f;
+            Vector3 dir = new Vector3(0, -1);
+
+            if (Physics.Raycast(transform.position, dir, out hit, distance))
+            {
+                isGrounded = true;
+            }
+            else
+            {
+                isGrounded = false;
+            }
+        }
+
+
+
+
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded == true)
+        {
+            rb.AddForce(new Vector3(0, 350, 0));
+            isGrounded = false;
+            print("bruh");
+        }
     }
 }
