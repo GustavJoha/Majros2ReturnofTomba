@@ -50,7 +50,7 @@ public class Movement : MonoBehaviour
             {
                 isGrounded = false;
             }
-        }
+        } //Gör så att spelaren bara kan hoppa ifall de är på marken , Victor
 
 
 
@@ -59,7 +59,7 @@ public class Movement : MonoBehaviour
         {
             rb.AddForce(new Vector3(0, 350, 0));
             isGrounded = false;
-            print("bruh");
+            
         }
     }
 }
