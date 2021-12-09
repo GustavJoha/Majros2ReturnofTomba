@@ -17,8 +17,9 @@ public class buttonlazer : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out buttonhit, Mathf.Infinity, 1))
         {
-                print("bruh");
-                print(buttonhit.transform);
+            IButtonInteractable Interact = buttonhit.transform.GetComponent<IButtonInteractable>();
+
+            Interact.ButtonPress();
         }
     }
 }
