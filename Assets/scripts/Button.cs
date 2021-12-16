@@ -2,22 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Button : MonoBehaviour , IButtonInteractable
+public class Button : MonoBehaviour // skriv gärna in saker som knappar ska göra här. - Gustav
 {
-    public void ButtonPress()
-    {
-        print("funkar");
-    }
+    public bool ispressed;
+    public GameObject otherobject;
+    public Vector3 otherobjectmove; // det objekt som knappen ska påverka.
 
-    // Start is called before the first frame update
-    void Start()
+    public void buttonmovething() // i det här exemplet flyttas ett objekt. -Gustav
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (ispressed == false)
+        {
+            otherobject.transform.position += otherobjectmove;
+            ispressed = true;
+        } 
+        else
+        {
+            otherobject.transform.position -= otherobjectmove;
+            ispressed = false;
+        }
     }
 }

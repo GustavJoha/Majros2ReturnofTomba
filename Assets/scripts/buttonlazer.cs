@@ -5,6 +5,8 @@ using UnityEngine;
 public class buttonlazer : MonoBehaviour
 {
     private RaycastHit buttonhit;
+    public LayerMask mask;
+    public IButtonInteractable Interact;
 
     // Start is called before the first frame update
     void Start()
@@ -15,10 +17,10 @@ public class buttonlazer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out buttonhit, Mathf.Infinity, 1))
+        if (Input.GetMouseButtonDown(0) && Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out buttonhit, Mathf.Infinity, mask))
         {
-            IButtonInteractable Interact = buttonhit.transform.GetComponent<IButtonInteractable>();
-
+            Interact = buttonhit.transform.GetComponent<IButtonInteractable>();
+            
             Interact.ButtonPress();
         }
     }
