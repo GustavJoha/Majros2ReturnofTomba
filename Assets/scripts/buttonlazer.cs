@@ -20,8 +20,10 @@ public class buttonlazer : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out buttonhit, Mathf.Infinity, mask))
         {
             Interact = buttonhit.transform.GetComponent<IButtonInteractable>();
-            
-            Interact.ButtonPress();
+            if (Interact != null)
+            {
+                Interact.ButtonPress();
+            }
         }
     }
 }
